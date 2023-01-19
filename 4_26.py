@@ -82,4 +82,8 @@ def user_product(product):
     finish_button.click()
     browser.quit()
 
-user_product(product)
+if product in ('1', '2', '3', '4', '5', '6'):
+    user_product(product)
+else:
+    print('Число должно быть от одного до 6')
+
