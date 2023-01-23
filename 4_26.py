@@ -19,7 +19,7 @@ all_products_prices = {'1': '//*[@id="inventory_container"]/div/div[1]/div[2]/di
                        '5': '//*[@id="inventory_container"]/div/div[5]/div[2]/div[2]/div', '6': '//*[@id="inventory_container"]/div/div[6]/div[2]/div[2]/div'}
 all_products_links = {'1': '//button[@id="add-to-cart-sauce-labs-backpack"]', '2': '//button[@id="add-to-cart-sauce-labs-bike-light"]',
                       '3': '//button[@id="add-to-cart-sauce-labs-bolt-t-shirt"]', '4': '//button[@id="add-to-cart-sauce-labs-fleece-jacket"]',
-                      '5': '//button[@id="add-to-cart-sauce-labs-onesie"]', '6': '//button[@id="add-to-cart-test.allthethings()-t-shirt-(red)"]'}
+                      '5': '//button[@id="add-to-cart-sauce-labs-onesie"]', '6': '//button[@id="add-to-cart-module7.allthethings()-t-shirt-(red)"]'}
 
 def user_product(product):
     browser = webdriver.Chrome()
