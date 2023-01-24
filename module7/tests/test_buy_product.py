@@ -4,21 +4,30 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+
+from module7.pages.cart_page import CartPage
+from module7.pages.client_info_page import ClientInfoPage
 from module7.pages.login_page import LoginPage
+from module7.pages.main_page import MainPage
 
 
 def test_buy_product():
     browser = webdriver.Chrome()
 
+    print('Start test')
+
     login = LoginPage(browser)
     login.authorization()
 
-    shopping_cart_link = browser.find_element(By.XPATH, '//*[@id="shopping_cart_container"]/a')
-    shopping_cart_link.click()
+    mp = MainPage(browser)
+    mp.select_product()
 
-    success_test = WebDriverWait(browser, 30).until(EC.element_to_be_clickable((By.XPATH, '//span[@class="title"]')))
-    success_test_value = success_test.text
-    assert success_test_value == 'YOUR CART'
+    cp = CartPage(browser)
+    cp.confirm_product()
+
+    cip = ClientInfoPage(browser)
+    cip.input_info()
+
     time.sleep(5)
     print('Test success')
 
