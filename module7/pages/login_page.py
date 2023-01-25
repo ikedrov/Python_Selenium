@@ -16,7 +16,7 @@ class LoginPage(Base):
     user_name = '//input[@id="user-name"]'
     password = '//input[@id="password"]'
     login_button = '//input[@id="login-button"]'
-    main_word ='//span[@class="title"]'
+    main_word = '//span[@class="title"]'
 
     def get_user_name(self):
         return WebDriverWait(self.browser, 30).until(EC.element_to_be_clickable((By.XPATH, self.user_name)))

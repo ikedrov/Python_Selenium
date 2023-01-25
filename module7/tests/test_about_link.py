@@ -13,27 +13,18 @@ from module7.pages.main_page import MainPage
 from module7.pages.payment_page import PaymentPage
 
 
-def test_buy_product(set_up):
+def test_about_link():
     browser = webdriver.Chrome()
+
+    print('Start test')
 
     login = LoginPage(browser)
     login.authorization()
 
     mp = MainPage(browser)
-    mp.select_product()
-
-    cp = CartPage(browser)
-    cp.confirm_product()
-
-    cip = ClientInfoPage(browser)
-    cip.input_info()
-
-    pp = PaymentPage(browser)
-    pp.payment()
-
-    fp = FinishPage(browser)
-    fp.finish()
+    mp.select_menu_about()
 
     time.sleep(5)
+    print('Test success')
     browser.quit()
 
